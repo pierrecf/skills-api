@@ -42,12 +42,8 @@ var app = builder.Build();
 app.Urls.Add("http://*:80");
 Seeder.SeedDatabase(app);
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger(); 
+app.UseSwaggerUI();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
 app.UseHttpsRedirection();
