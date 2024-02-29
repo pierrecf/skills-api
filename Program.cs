@@ -40,7 +40,7 @@ builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(buil
 
 var app = builder.Build();
 app.Urls.Add("http://*:80");
-Seeder.SeedDatabase(app);
+// Seeder.SeedDatabase(app);
 // Configure the HTTP request pipeline.
 app.UseSwagger(); 
 app.UseSwaggerUI();
