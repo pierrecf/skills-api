@@ -39,7 +39,7 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
-
+app.Urls.Add("http://*:80");
 Seeder.SeedDatabase(app);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
